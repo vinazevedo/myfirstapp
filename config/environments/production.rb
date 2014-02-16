@@ -77,4 +77,8 @@ Myfirstapp::Application.configure do
   config.assets.initialize_on_precompile = true
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Required for Heroku.
+  # Note: set this to your actual host.
+  config.action_mailer.default_url_options = { :host => 'vsa-myfirstapp.herokuapp.com' }
 end
