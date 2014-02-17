@@ -2,9 +2,15 @@
 <h1>Be awesome with MyFirstApp!</h1><br>
 </br>
 
-<p><%= link_to "Sign up", "#", class: "btn btn-primary btn-lg" %> and become a hero like Batman. True story.</p>
+<% if user_signed_in? %>
+	Welcome to the members area. Ready to rock?
+<% else %>	
+<p><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %> and become a hero like Batman. True story.</p>
 
 <p><b>Already a hero?</b> <br>
 </br>
-	<%= link_to "Log in!", "#", class: "btn btn-default btn-lg" %></p>
+	<%= link_to "Log in!", new_user_session_path, class: "btn btn-default btn-lg" %>
+</p>
+
+<% end %>
 </div>
