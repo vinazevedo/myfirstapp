@@ -14,11 +14,16 @@
 
 		<div class="panel-body">
   		<p><%= @pin.description %></p>
-  		<p><strong><%= @pin.user.email %></strong></p>
+  		<p><strong><%= @pin.user.name %></strong></p>
 
 <% if @pin.user == current_user %>
 	<%= link_to edit_pin_path(@pin) do %>
 		<span class="glyphicon glyphicon-edit"></span> Edit
+  <% end %>
+  &nbsp
+  &nbsp
+  <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <span class="glyphicon glyphicon-trash"></span> Delete
   <% end %>
 <% end %>
 
